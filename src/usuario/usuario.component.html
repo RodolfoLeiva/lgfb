@@ -1,0 +1,20 @@
+hola
+<div *ngIf ="identidad; else elseBlock">Bienvenido usuario </div>
+
+<ng-template #elseBlock>
+	<div >
+<form #loginform="ngForm" (ngSubmit)="OnSubmit()">
+
+  <div class="container">
+    <label ><b>Username</b></label>
+    <input type="text" placeholder="correo" #email="ngModel" name="email" [(ngModel)]="user.email" >
+
+    <label ><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" #password="ngModel" name="password" [(ngModel)]="user.password" >
+
+    <button type="submit">Login</button>
+  
+  </div>
+</form>
+</div>
+</ng-template>

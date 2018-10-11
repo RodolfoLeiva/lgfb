@@ -1,0 +1,38 @@
+
+ <ion-content class="masters"  *ngIf="mostrarlogin" [@animacion]=estatustagle>
+    <ion-card>
+     <ion-col ><img  src="../../assets/imgs/logolg.png"></ion-col>
+    </ion-card>
+   <ion-card >
+     <ion-card-content >
+ <div>
+  <h1 >Login</h1>
+ </div>
+<form  #loginform="ngForm" (ngSubmit)="loginfuncion()">
+  <ion-list color="light" >
+ 
+  <ion-item >
+    <ion-label stacked>Email</ion-label>
+    <ion-input type="text" #email="ngModel" name="email" [(ngModel)]="user.email" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label  stacked>Password</ion-label>
+    <ion-input type="password" #password="ngModel" name="password" [(ngModel)]="user.password"  ></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label > <h6>¿Mantenerse logueado?</h6></ion-label>
+    <ion-checkbox name="guardar"    [(ngModel)]="guardarenlocal" color="dark" checked="true"></ion-checkbox>
+  </ion-item>
+
+  </ion-list>
+
+    <ion-label fixed></ion-label>
+     <ion-row center>
+    <button ion-button full round type="submit">entrar</button>
+  </ion-row>
+</form>
+  </ion-card-content>
+  </ion-card>
+</ion-content>
